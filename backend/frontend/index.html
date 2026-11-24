@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>InventoryPro</h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+               <a href="#" id="productsLink">Products</a>
+                <a href="#" id="categoriesLink">Categories</a>
+                <a href="#" id="transactionsLink">Stock Transactions</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <h1>Dashboard</h1>
+                <p>Inventory Management System</p>
+            </header>
+
+            <!-- Summary Cards -->
+           <section class="summary-cards">
+
+    <div class="card">
+        <h3>Total Products</h3>
+        <p id="totalProducts">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Categories</h3>
+        <p id="totalCategories">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Low Stock Items</h3>
+        <p id="lowStock">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Stock</h3>
+        <p id="totalStock">0</p>
+    </div>
+
+</section>
+
+            <!-- Products Section -->
+            <section class="products-section" id="productsSection"></section>
+
+                <div class="section-header">
+                    <h2>Products</h2>
+                    <button id="addProductBtn">+ Add Product</button>
+                </div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productTable">
+                        <tr>
+                            <td colspan="6">Loading products...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+<!-- Add Product Form -->
+<section class="products-section" id="addProductForm" style="display: none; margin-top: 25px;">
+
+    <h2>Add New Product</h2>
+
+    <form id="productForm">
+
+        <label>Product ID</label>
+        <input type="text" id="productId" required>
+
+        <label>Product Name</label>
+        <input type="text" id="productName" required>
+
+        <label>Category</label>
+        <input type="text" id="productCategory" required>
+
+        <label>Quantity</label>
+        <input type="number" id="productQuantity" min="0" required>
+
+        <label>Unit Price</label>
+        <input type="number" id="productPrice" min="0" step="0.01" required>
+
+        <button type="submit">Save Product</button>
+
+    </form>
+
+</section>
+     <!-- Categories Section -->
+<section class="products-section" id="categoriesSection" style="display: none; margin-top: 25px;">
+
+    <h2>Product Categories</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        <tbody id="categoriesTable">
+            <tr>
+                <td colspan="3">Loading categories...</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>  
+<!-- Stock Transactions Section -->
+<section class="products-section" id="transactionsSection" style="display: none; margin-top: 25px;">
+
+    <h2>Stock Transactions</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Transaction Type</th>
+                <th>Quantity</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody id="transactionsTable">
+            <tr>
+                <td colspan="4">Loading transactions...</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
+
+</main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
